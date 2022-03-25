@@ -1,3 +1,4 @@
+import { useLocalStorage } from "react-use";
 import styled from "styled-components";
 import InputField from "../InputField/InputField";
 
@@ -14,23 +15,20 @@ const ZipCodeWrapper = styled.div`
   width: 150px;
 `;
 
-const InnerWrapper = styled.div`
-  display: flex;
-`;
-
-const StreetInput = styled(InputField)`
-  flex: 2;
-`;
-
 const AddressDetails = () => {
+  const [town, setTown] = useLocalStorage("town", "");
+
   return (
     <Wrapper>
-      <InputField placeholder="Town/City" />
+      <InputField
+        value={town}
+        onChange={(e) => setTown(e.target.value)}
+        placeholder="Town/City"
+      />
       <Divider />
-      <InnerWrapper>
-        <InputField placeholder="Street" />
-        <InputField placeholder="House nr." />
-      </InnerWrapper>
+      <InputField placeholder="Street" />
+      <Divider />
+      <InputField placeholder="House nr, addition" />
       <Divider />
       <ZipCodeWrapper>
         <InputField placeholder="Zip Code" />

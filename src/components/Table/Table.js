@@ -1,7 +1,7 @@
 const Table = () => {
   return (
     <>
-      <table class="table table-hover">
+      <table className="table table-hover">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -33,7 +33,7 @@ const Table = () => {
             <td>@twitter</td>
           </tr>
           <tr>
-            <td colspan="2">Total:</td>
+            <td colSpan="2">Total:</td>
             <td></td>
             <td>€ 20</td>
             <td>€ 20</td>

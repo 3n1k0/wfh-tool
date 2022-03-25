@@ -33,6 +33,7 @@ const InputField = (props) => {
           </Icon>
         )}
         <StyledInput
+          onChange={props.onChange}
           placeholder={props.placeholder}
           aria-label={props.ariaLabel}
           id="nameInput"

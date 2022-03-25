@@ -16,21 +16,25 @@ const SquadTitle = styled.p`
   font-weight: bold;
 `;
 
-const SquadSelector = () => {
+const SquadSelector = ({ squads }) => {
   return (
     <Wrapper>
       <SquadTitle>Please select your squad:</SquadTitle>
-      <input type="radio" id="elly" name="squad" value="elly" />
-      <Label for="elly">Elly</Label>
-      <br />
-      <input type="radio" id="wilson" name="squad" value="wilson" />
-      <Label for="wilson">Wilson</Label>
-      <br />
-      <input type="radio" id="cohen" name="squad" value="cohen" />
-      <Label for="cohen">Cohen</Label>
-      <br />
-      <input type="radio" id="tenzing" name="squad" value="tenzing" />
-      <Label for="cohen">Tenzing</Label>
+      {squads.map((squad) => {
+        return (
+          <>
+            <input
+              key={squad}
+              type="radio"
+              id={squad}
+              name="squad"
+              value={squad}
+            />
+            <Label htmlFor="squad">{squad}</Label>
+            <br />
+          </>
+        );
+      })}
     </Wrapper>
   );
 };
