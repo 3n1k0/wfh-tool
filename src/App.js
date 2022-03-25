@@ -6,6 +6,7 @@ import InputField from "./components/InputField/InputField";
 import Table from "./components/Table/Table";
 import SquadSelector from "./components/SquadSelector/SquadSelector";
 import AddressDetails from "./components/AddressDetails/AddressDetails";
+import DatePicker from "./components/DatePicker/DatePicker";
 
 const StyledImage = styled.img`
   max-height: 100px;
@@ -18,14 +19,18 @@ const Divider = styled.div`
 `;
 
 const Pdf = styled.div`
-  width: 612px;
-  height: 792px;
+  height: 612/2px;
+  width: 792px;
   background-color: white;
   margin: 80px auto;
 `;
 
 const InputDivider = styled.div`
-  height: 5px;
+  height: 15px;
+`;
+
+const Title = styled.p`
+  font-weight: "bold";
 `;
 
 function App() {
@@ -38,6 +43,7 @@ function App() {
       <div class="container">
         <div class="row">
           <div class="col-sm">
+            <Title>ANDi information</Title>
             <InputField
               ariaLabel="Name"
               placeholder={"Your Name *"}
@@ -56,20 +62,22 @@ function App() {
           </div>
           <div class="col-sm">
             <SquadSelector />
+            <InputDivider />
           </div>
           <div class="col-sm">
-            <p>Home Address:</p>
+            <Title>Home Address</Title>
             <AddressDetails />
           </div>
         </div>
+        <DatePicker />
       </div>
-      <button type="button" color="pink" class="btn btn-primary">
-        Download Pdf
-      </button>
       <Pdf>
         <h2>preview</h2>
         <Table />
       </Pdf>
+      <button type="button" color="pink" class="btn btn-primary">
+        Download Pdf
+      </button>
     </div>
   );
 }

@@ -7,17 +7,34 @@ const Wrapper = styled.div`
 `;
 
 const Divider = styled.div`
-  height: 5px;
+  height: 15px;
+`;
+
+const ZipCodeWrapper = styled.div`
+  width: 150px;
+`;
+
+const InnerWrapper = styled.div`
+  display: flex;
+`;
+
+const StreetInput = styled(InputField)`
+  flex: 2;
 `;
 
 const AddressDetails = () => {
   return (
     <Wrapper>
-      <InputField />
+      <InputField placeholder="Town/City" />
       <Divider />
-      <InputField />
+      <InnerWrapper>
+        <InputField placeholder="Street" />
+        <InputField placeholder="House nr." />
+      </InnerWrapper>
       <Divider />
-      <InputField />
+      <ZipCodeWrapper>
+        <InputField placeholder="Zip Code" />
+      </ZipCodeWrapper>
     </Wrapper>
   );
 };

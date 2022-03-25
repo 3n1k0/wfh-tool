@@ -15,7 +15,6 @@ const Wrapper = styled.div`
   border-radius: 5px;
   align-items: center;
   box-shadow: 0 5px 20px 0 rgb(61 82 96 / 15%);
-  margin: 10px;
 
   &:focus-within {
     outline: 3px solid #cef2e6;
@@ -28,9 +27,11 @@ const InputField = (props) => {
   return (
     <div className="form-group">
       <Wrapper>
-        <Icon backgroundColor="#f3f4f5" color="#34c89f" size={10}>
-          {props.icon}
-        </Icon>
+        {props.icon && (
+          <Icon backgroundColor="#f3f4f5" color="#34c89f" size={10}>
+            {props.icon}
+          </Icon>
+        )}
         <StyledInput
           placeholder={props.placeholder}
           aria-label={props.ariaLabel}
